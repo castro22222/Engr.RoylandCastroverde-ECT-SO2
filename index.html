@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royland Castroverde | Professional Portfolio</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f172a', /* slate-900 */
+                        secondary: '#1e3a8a', /* blue-900 */
+                        accent: '#3b82f6', /* blue-500 */
+                        background: '#020617', /* slate-950 */
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #020617;
+            color: #cbd5e1;
+        }
+        .section-card {
+            background: linear-gradient(145deg, #0f172a 0%, #020617 100%);
+            border: 1px solid #1e3a8a;
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-4px);
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+        }
+        .skill-badge {
+            background-color: rgba(30, 58, 138, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.2s ease;
+        }
+        .skill-badge:hover {
+            background-color: rgba(59, 130, 246, 0.2);
+            border-color: #3b82f6;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e3a8a; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6; 
+        }
+
+        /* NEW: Custom animations for Gemini features */
+        .typing-indicator span {
+            animation: blink 1.4s infinite both;
+            height: 6px;
+            width: 6px;
+            background: #3b82f6;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 1px;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes blink {
+            0% { opacity: 0.2; }
+            20% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-blue-900 selection:text-white">
+
+    <!-- Hero / Header Section -->
+    <header class="relative bg-gradient-to-b from-black via-primary to-background pt-24 pb-16 px-4 border-b border-secondary overflow-hidden">
+        <!-- Abstract Background Glow -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-4xl pointer-events-none opacity-20">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-blue-600 rounded-full mix-blend-screen filter blur-3xl"></div>
+            <div class="absolute top-10 right-10 w-64 h-64 bg-blue-800 rounded-full mix-blend-screen filter blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4">
+                ROYLAND CASTROVERDE
+            </h1>
+            <p class="text-xl md:text-2xl text-accent font-medium mb-8">
+                Licensed Electronics Engineer (ECE) | Safety Officer 2 (SO2)
+            </p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-6 text-sm md:text-base text-slate-300">
+                <a href="mailto:castroverderoyland9@gmail.com" class="flex items-center hover:text-white transition-colors duration-200">
+                    <div class="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center mr-3 border border-secondary">
+                        <i class="fas fa-envelope text-accent"></i>
+                    </div>
+                    castroverderoyland9@gmail.com
+                </a>
+                <span class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center mr-3 border border-secondary">
+                        <i class="fas fa-phone text-accent"></i>
+                    </div>
+                    09544460250
+                </span>
+                <span class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center mr-3 border border-secondary">
+                        <i class="fas fa-map-marker-alt text-accent"></i>
+                    </div>
+                    Marilao, Bulacan
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-16 space-y-12">
+        
+        <!-- Professional Summary -->
+        <section class="section-card rounded-2xl p-8 shadow-xl">
+            <div class="flex items-center mb-6 border-b border-slate-800 pb-4">
+                <i class="fas fa-user-tie text-2xl text-accent mr-4"></i>
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Professional Summary</h2>
+            </div>
+            <p class="text-lg leading-relaxed text-slate-300">
+                Licensed Electronics Engineer (ECE), Registered Electronics Technician (ECT), and Certified Safety Officer 2 (SO2) with hands-on experience in equipment maintenance, troubleshooting, and system operations. Skilled in preventive maintenance, machine diagnostics, and technical support within safety-critical environments. Capable of supporting production and operational efficiency through strong problem-solving and technical skills.
+            </p>
+        </section>
+
+        <!-- NEW: AI Pitch Generator -->
+        <section class="section-card rounded-2xl p-8 shadow-xl border border-accent/40 relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
+                <div class="flex items-center">
+                    <i class="fas fa-sparkles text-2xl text-accent mr-4"></i>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Hire Me ✨</h2>
+                </div>
+                <span class="text-xs font-semibold bg-accent/20 text-accent px-3 py-1 rounded-full border border-accent/30">Powered by Gemini AI</span>
+            </div>
+            <p class="text-slate-300 mb-4">Are you a recruiter? Paste a job description below, and my AI assistant will generate a custom pitch explaining exactly why my engineering skills make me the perfect fit.</p>
+            <textarea id="jobDescriptionInput" rows="3" class="w-full bg-background/50 border border-slate-700 rounded-lg p-4 text-slate-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none mb-4 shadow-inner" placeholder="e.g., Looking for an Electronics Engineer with experience in preventive maintenance, microcontroller systems, and safety compliance..."></textarea>
+            <button id="generatePitchBtn" class="bg-accent hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors flex items-center shadow-lg shadow-accent/20">
+                <i class="fas fa-magic mr-2"></i> Generate Pitch
+            </button>
+            <div id="pitchResultArea" class="hidden mt-6 bg-slate-900/50 rounded-lg p-5 border border-slate-800 text-slate-300 whitespace-pre-wrap leading-relaxed shadow-inner"></div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section-card rounded-2xl p-8 shadow-xl">
+            <div class="flex items-center mb-6 border-b border-slate-800 pb-4">
+                <i class="fas fa-tools text-2xl text-accent mr-4"></i>
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Technical Skills</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Skill Category 1 -->
+                <div>
+                    <h3 class="text-lg font-semibold text-accent mb-3 flex items-center">
+                        <i class="fas fa-wrench mr-2 text-sm"></i> Maintenance
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Equipment Maintenance</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Troubleshooting</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Electrical & Electronic Systems</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Technical Inspection</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category 2 -->
+                <div>
+                    <h3 class="text-lg font-semibold text-accent mb-3 flex items-center">
+                        <i class="fas fa-microchip mr-2 text-sm"></i> Embedded & Hardware
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Arduino / Microcontrollers</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">GPIO Control</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Hardware Integration</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">NFC Technology</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category 3 -->
+                <div>
+                    <h3 class="text-lg font-semibold text-accent mb-3 flex items-center">
+                        <i class="fas fa-laptop-code mr-2 text-sm"></i> Programming & Software
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Embedded C++</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Database Integration</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">AutoCAD</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Microsoft Office</span>
+                    </div>
+                </div>
+
+                <!-- Skill Category 4 -->
+                <div>
+                    <h3 class="text-lg font-semibold text-accent mb-3 flex items-center">
+                        <i class="fas fa-hard-hat mr-2 text-sm"></i> Safety & Operations
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">OSH Compliance</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Hazard Identification</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Risk Assessment</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience -->
+        <section class="section-card rounded-2xl p-8 shadow-xl">
+            <div class="flex items-center mb-6 border-b border-slate-800 pb-4">
+                <i class="fas fa-briefcase text-2xl text-accent mr-4"></i>
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Work Experience</h2>
+            </div>
+            
+            <div class="relative pl-8 before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-secondary before:to-transparent">
+                <div class="relative mb-8">
+                    <div class="absolute -left-[39px] w-4 h-4 rounded-full bg-accent border-4 border-primary"></div>
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Air Navigation Services - OJT</h3>
+                        <span class="text-accent text-sm font-semibold bg-secondary/30 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">June 2024</span>
+                    </div>
+                    <div class="text-slate-400 font-medium mb-4 flex items-center">
+                        <i class="fas fa-building mr-2"></i> Civil Aviation Authority of the Philippines (CAAP)
+                        <span class="mx-2">|</span>
+                        <i class="fas fa-map-marker-alt mr-2"></i> San Jose, Pili, Camarines Sur
+                    </div>
+                    <ul class="list-none space-y-3 text-slate-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-3 text-sm"></i>
+                            <span>Assisted in maintenance, monitoring, and troubleshooting of electronic and communication equipment used in aviation operations.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-3 text-sm"></i>
+                            <span>Supported preventive maintenance activities to ensure operational reliability of critical systems.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-3 text-sm"></i>
+                            <span>Conducted equipment inspections and basic diagnostics following safety and operational procedures.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-accent mt-1 mr-3 text-sm"></i>
+                            <span>Worked with technical personnel in maintaining communication and surveillance systems.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Projects -->
+        <section class="section-card rounded-2xl p-8 shadow-xl">
+            <div class="flex items-center mb-6 border-b border-slate-800 pb-4">
+                <i class="fas fa-project-diagram text-2xl text-accent mr-4"></i>
+                <h2 class="text-2xl md:text-3xl font-bold text-white">Technical Projects</h2>
+            </div>
+            
+            <div class="bg-background/50 rounded-xl p-6 border border-slate-800">
+                <h3 class="text-xl font-bold text-white mb-4 text-accent">Smart NFC-Integrated Automatic Locker System</h3>
+                <ul class="list-none space-y-3 text-slate-300">
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-accent mt-1 mr-3 font-bold"></i>
+                        <span>Designed and developed an automated locker system using NFC technology for secure machine access.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-accent mt-1 mr-3 font-bold"></i>
+                        <span>Integrated hardware components, locking mechanisms, and software-based authentication systems.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-accent mt-1 mr-3 font-bold"></i>
+                        <span>Performed testing and troubleshooting to ensure stable and reliable operation.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-accent mt-1 mr-3 font-bold"></i>
+                        <span>Developed backend database and user interface for operational management.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Two Column Section: Education & Certifications -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Education -->
+            <section class="section-card rounded-2xl p-8 shadow-xl">
+                <div class="flex items-center mb-6 border-b border-slate-800 pb-4">
+                    <i class="fas fa-graduation-cap text-2xl text-accent mr-4"></i>
+                    <h2 class="text-2xl font-bold text-white">Education</h2>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2 leading-tight">Bachelor of Science in Electronics Engineering</h3>
+                    <p class="text-accent font-medium mb-1">Camarines Sur Polytechnic Colleges</p>
+                    <p class="text-slate-400 text-sm mb-3"><i class="fas fa-map-marker-alt mr-1"></i> Nabua, Camarines Sur</p>
+                    <div class="inline-block bg-secondary/30 text-slate-300 text-sm px-3 py-1 rounded-full">
+                        <i class="far fa-calendar-alt mr-1"></i> Aug 2022 - Jul 2025
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="section-card rounded-2xl p-8 shadow-xl">
+                <div class="flex items-center mb-6 border-b border-slate-800 pb-4">
+                    <i class="fas fa-certificate text-2xl text-accent mr-4"></i>
+                    <h2 class="text-2xl font-bold text-white">Certifications</h2>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center mr-3 mt-0.5">
+                            <i class="fas fa-star text-accent text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium">Registered Electronics Engineer (ECE)</p>
+                            <p class="text-slate-400 text-sm">Board Passer, March 2026</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center mr-3">
+                            <i class="fas fa-shield-alt text-accent text-sm"></i>
+                        </div>
+                        <p class="text-slate-300 font-medium">Registered Electronics Technician (ECT)</p>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center mr-3">
+                            <i class="fas fa-hard-hat text-accent text-sm"></i>
+                        </div>
+                        <p class="text-slate-300 font-medium">Certified Safety Officer 2 (SO2)</p>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-secondary flex items-center justify-center mr-3">
+                            <i class="fas fa-cogs text-accent text-sm"></i>
+                        </div>
+                        <p class="text-slate-300 font-medium">Mechatronics Service NCII</p>
+                    </li>
+                </ul>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-secondary bg-primary py-8 mt-12 text-center text-slate-400 text-sm">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Royland Castroverde. All rights reserved.</p>
+    </footer>
+
+    <!-- NEW: Floating Chat Widget -->
+    <div id="chatWidgetContainer" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Chat Box -->
+        <div id="chatBox" class="hidden w-[90vw] sm:w-96 bg-primary border border-secondary rounded-2xl shadow-2xl overflow-hidden mb-4 transition-all duration-300 origin-bottom-right transform scale-95 opacity-0">
+            <div class="bg-gradient-to-r from-secondary to-blue-800 p-4 flex justify-between items-center text-white">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center mr-3 backdrop-blur-sm shadow-inner">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-sm">Royland's AI Assistant ✨</h3>
+                        <p class="text-xs text-blue-200">Ask about my experience!</p>
+                    </div>
+                </div>
+                <button id="closeChatBtn" class="text-white/70 hover:text-white transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="chatMessages" class="h-80 overflow-y-auto p-4 space-y-4 bg-background/90 scroll-smooth">
+                <!-- Initial greeting -->
+                <div class="flex items-start">
+                    <div class="w-6 h-6 rounded-full bg-secondary flex-shrink-0 flex items-center justify-center mr-2 mt-1">
+                        <i class="fas fa-robot text-xs text-white"></i>
+                    </div>
+                    <div class="bg-slate-800 text-slate-200 text-sm rounded-2xl rounded-tl-sm p-3 border border-slate-700 shadow-sm">
+                        Hello! I'm an AI assistant trained on Royland's resume. What would you like to know about his engineering skills, projects, or background?
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-3 bg-primary border-t border-slate-800 flex items-center gap-2">
+                <input type="text" id="chatInput" class="flex-1 bg-background border border-slate-700 rounded-full px-4 py-2 text-sm text-slate-200 focus:outline-none focus:border-accent shadow-inner" placeholder="Type your question...">
+                <button id="sendChatBtn" class="w-9 h-9 rounded-full bg-accent text-white flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg shadow-accent/20 flex-shrink-0">
+                    <i class="fas fa-paper-plane text-sm -ml-0.5"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Toggle Button -->
+        <button id="toggleChatBtn" class="w-14 h-14 rounded-full bg-accent text-white shadow-xl shadow-accent/30 flex items-center justify-center hover:scale-110 transition-transform duration-200 border-2 border-blue-400 group">
+            <i class="fas fa-comment-dots text-2xl group-hover:hidden"></i>
+            <i class="fas fa-sparkles text-2xl hidden group-hover:block"></i>
+        </button>
+    </div>
+
+    <!-- NEW: Application Script with Gemini API Integration -->
+    <script>
+        const apiKey = ""; // Execution environment injects the key
+        
+        // Royland's full context encoded for the AI's system prompt
+        const roylandContext = `
+            Name: Royland Castroverde
+            Roles: Licensed Electronics Engineer (ECE), Registered Electronics Technician (ECT), Certified Safety Officer 2 (SO2)
+            Summary: Hands-on experience in equipment maintenance, troubleshooting, and system operations. Skilled in preventive maintenance, machine diagnostics, and technical support within safety-critical environments. Capable of supporting production and operational efficiency through strong problem-solving and technical skills.
+            Technical Skills: Equipment Maintenance, Troubleshooting, Electrical & Electronic Systems, Technical Inspection, Arduino / Microcontroller Systems, GPIO Control & Hardware Integration, NFC Technology Implementation, Python, Embedded C++, Database Integration, AutoCAD, Occupational Safety and Health (OSH) Compliance, Hazard Identification & Risk Assessment.
+            Experience: Air Navigation Services - On-the-Job Training at Civil Aviation Authority of the Philippines (CAAP) in San Jose, Pili, Camarines Sur (June 2024). Assisted in maintenance, monitoring, and troubleshooting of electronic and communication equipment used in aviation operations.
+            Projects: Smart NFC-Integrated Automatic Locker System. Designed and developed an automated locker system using NFC technology for secure machine access. Integrated hardware components, locking mechanisms, and software-based authentication systems.
+            Education: Bachelor of Science in Electronics Engineering at Camarines Sur Polytechnic Colleges (August 2022 - July 2025).
+            Certifications: Registered Electronics Engineer (ECE) - Board Passer March 2026, Registered Electronics Technician (ECT), Certified Safety Officer 2 (SO2), Mechatronics Service NCII.
+            Contact: castroverderoyland9@gmail.com | 09544460250 | Marilao, Bulacan
+        `;
+
+        const baseSystemInstruction = `You are a helpful, enthusiastic AI assistant representing Royland Castroverde. Your goal is to strongly advocate for his hiring and answer questions about his professional background using the following information:\n\n${roylandContext}\n\nKeep your answers concise, professional, friendly, and directly related to his qualifications. Address users politely.`;
+
+        // API Fetcher with exponential backoff
+        async function fetchGeminiWithRetry(payload, retries = 5) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return await response.json();
+                } catch (error) {
+                    if (i === retries - 1) throw error;
+                    await new Promise(r => setTimeout(r, Math.pow(2, i) * 1000));
+                }
+            }
+        }
+
+        // --- Feature 1: AI Pitch Generator ---
+        const pitchBtn = document.getElementById('generatePitchBtn');
+        const pitchInput = document.getElementById('jobDescriptionInput');
+        const pitchResult = document.getElementById('pitchResultArea');
+
+        pitchBtn.addEventListener('click', async () => {
+            const jobDesc = pitchInput.value.trim();
+            if (!jobDesc) return;
+
+            // Update UI to loading state
+            pitchBtn.disabled = true;
+            pitchBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Generating...';
+            pitchResult.classList.remove('hidden');
+            pitchResult.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+
+            const payload = {
+                contents: [{ parts: [{ text: `Write a concise, compelling cover letter pitch (2 short paragraphs max) explaining why Royland Castroverde is a great fit for the following job description. Map his specific skills to the job requirements. Job Description: ${jobDesc}` }] }],
+                systemInstruction: { parts: [{ text: baseSystemInstruction }] }
+            };
+
+            try {
+                const data = await fetchGeminiWithRetry(payload);
+                const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "Unable to generate a pitch at this time.";
+                
+                // Light formatting for basic Markdown bolding
+                const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>').replace(/\n/g, '<br>');
+                pitchResult.innerHTML = `<div class="text-emerald-400 font-semibold mb-3 border-b border-slate-700 pb-2"><i class="fas fa-check-circle mr-2"></i> Custom Pitch Ready</div>${formattedText}`;
+            } catch (error) {
+                pitchResult.innerHTML = `<span class="text-red-400"><i class="fas fa-exclamation-triangle mr-2"></i> Sorry, there was an error connecting to the AI. Please try again.</span>`;
+            } finally {
+                pitchBtn.disabled = false;
+                pitchBtn.innerHTML = '<i class="fas fa-magic mr-2"></i> Generate Pitch';
+            }
+        });
+
+        // --- Feature 2: AI Chat Assistant ---
+        const chatBox = document.getElementById('chatBox');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        let chatHistory = [];
+
+        function toggleChat() {
+            if (chatBox.classList.contains('hidden')) {
+                chatBox.classList.remove('hidden');
+                // Trigger reflow for transition
+                void chatBox.offsetWidth;
+                chatBox.classList.remove('scale-95', 'opacity-0');
+                chatBox.classList.add('scale-100', 'opacity-100');
+                chatInput.focus();
+            } else {
+                chatBox.classList.remove('scale-100', 'opacity-100');
+                chatBox.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => chatBox.classList.add('hidden'), 300);
+            }
+        }
+
+        document.getElementById('toggleChatBtn').addEventListener('click', toggleChat);
+        document.getElementById('closeChatBtn').addEventListener('click', toggleChat);
+
+        function appendMessage(text, isUser = false) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `flex items-start ${isUser ? 'justify-end' : ''}`;
+            
+            const formattedText = isUser ? text : text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            
+            if (isUser) {
+                msgDiv.innerHTML = `<div class="bg-accent text-white text-sm rounded-2xl rounded-tr-sm p-3 shadow-sm max-w-[85%] ml-auto break-words">${formattedText}</div>`;
+            } else {
+                msgDiv.innerHTML = `
+                    <div class="w-6 h-6 rounded-full bg-secondary flex-shrink-0 flex items-center justify-center mr-2 mt-1 shadow-inner">
+                        <i class="fas fa-robot text-xs text-white"></i>
+                    </div>
+                    <div class="bg-slate-800 text-slate-200 text-sm rounded-2xl rounded-tl-sm p-3 border border-slate-700 shadow-sm max-w-[85%] break-words">${formattedText}</div>`;
+            }
+
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return msgDiv;
+        }
+
+        async function handleSend() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            appendMessage(text, true);
+            chatInput.value = '';
+            chatHistory.push({ role: "user", parts: [{ text }] });
+
+            const typingIndicator = appendMessage('<div class="typing-indicator"><span></span><span></span><span></span></div>', false);
+
+            const payload = {
+                contents: chatHistory,
+                systemInstruction: { parts: [{ text: baseSystemInstruction }] }
+            };
+
+            try {
+                const data = await fetchGeminiWithRetry(payload);
+                const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't process that.";
+                
+                typingIndicator.remove();
+                appendMessage(reply, false);
+                chatHistory.push({ role: "model", parts: [{ text: reply }] });
+            } catch (error) {
+                typingIndicator.remove();
+                appendMessage("Network connection interrupted. Please try asking again.", false);
+            }
+        }
+
+        document.getElementById('sendChatBtn').addEventListener('click', handleSend);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSend();
+        });
+    </script>
+</body>
+</html>
