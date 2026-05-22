@@ -406,7 +406,7 @@
 
     <!-- NEW: Application Script with Gemini API Integration -->
     <script>
-        const apiKey = "AIzaSyBWKg9M5YLhRTP3WryhC7kfTPb2KYMpaxw";
+        const apiKey = "AIzaSyCvxO9agQSvuU9SZYpEqf04rSNcxQLHHfI";
         
         // Royland's full context encoded for the AI's system prompt
         const roylandContext = `
@@ -428,7 +428,7 @@ ${roylandContext}`;
 
         // API Fetcher with exponential backoff
         async function fetchGeminiWithRetry(payload, retries = 5) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
             for (let i = 0; i < retries; i++) {
                 try {
                     const response = await fetch(url, {
@@ -436,9 +436,14 @@ ${roylandContext}`;
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(payload)
                     });
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    if (!response.ok) {
+                        const error = await response.text();
+                        console.error(`HTTP error! status: ${response.status}, body: ${error}`);
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
                     return await response.json();
                 } catch (error) {
+                    console.error(`Attempt ${i + 1} failed:`, error);
                     if (i === retries - 1) throw error;
                     await new Promise(r => setTimeout(r, Math.pow(2, i) * 1000));
                 }
@@ -452,7 +457,11 @@ ${roylandContext}`;
 
         pitchBtn.addEventListener('click', async () => {
             const jobDesc = pitchInput.value.trim();
-            if (!jobDesc) return;
+            if (!jobDesc) {
+                pitchResult.classList.remove('hidden');
+                pitchResult.innerHTML = '<span class="text-yellow-400"><i class="fas fa-info-circle mr-2"></i> Please paste a job description first!</span>';
+                return;
+            }
 
             // Update UI to loading state
             pitchBtn.disabled = true;
@@ -473,6 +482,7 @@ ${roylandContext}`;
                 const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>').replace(/\n/g, '<br>');
                 pitchResult.innerHTML = `<div class="text-emerald-400 font-semibold mb-3 border-b border-slate-700 pb-2"><i class="fas fa-check-circle mr-2"></i> Custom Pitch Ready</div>${formattedText}`;
             } catch (error) {
+                console.error('Pitch generation error:', error);
                 pitchResult.innerHTML = `<span class="text-red-400"><i class="fas fa-exclamation-triangle mr-2"></i> Sorry, there was an error connecting to the AI. Please try again.</span>`;
             } finally {
                 pitchBtn.disabled = false;
@@ -548,6 +558,7 @@ ${roylandContext}`;
                 appendMessage(reply, false);
                 chatHistory.push({ role: "model", parts: [{ text: reply }] });
             } catch (error) {
+                console.error('Chat error:', error);
                 typingIndicator.remove();
                 appendMessage("Network connection interrupted. Please try asking again.", false);
             }
