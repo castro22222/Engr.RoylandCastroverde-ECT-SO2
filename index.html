@@ -138,7 +138,7 @@
                 <h2 class="text-2xl md:text-3xl font-bold text-white">Professional Summary</h2>
             </div>
             <p class="text-lg leading-relaxed text-slate-300">
-                Licensed Electronics Engineer (ECE), Registered Electronics Technician (ECT), and Certified Safety Officer 2 (SO2) with hands-on experience in equipment maintenance, troubleshooting, and system operations. Skilled in preventive maintenance, machine diagnostics, and technical support within safety-critical environments. Capable of supporting production and operational efficiency through strong problem-solving and technical skills.
+                Licensed Electronics Engineer (ECE), Registered Electronics Technician (ECT), and Certified Safety Officer 2 (SO2) with hands-on experience in equipment maintenance, troubleshooting, and system operations. Skilled in preventive maintenance, machine diagnostics, and technical support within safety-compliant environments. Passionate about emerging technologies including IoT, NFC integration, and automation systems.
             </p>
         </section>
 
@@ -152,8 +152,8 @@
                 </div>
                 <span class="text-xs font-semibold bg-accent/20 text-accent px-3 py-1 rounded-full border border-accent/30">Powered by AI</span>
             </div>
-            <p class="text-slate-300 mb-4">Are you a recruiter? Paste a job description below, and my AI assistant will generate a custom pitch explaining exactly why my engineering skills make me the perfect fit.</p>
-            <textarea id="jobDescriptionInput" rows="3" class="w-full bg-background/50 border border-slate-700 rounded-lg p-4 text-slate-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none mb-4 shadow-inner" placeholder="e.g., Looking for an Electronics Engineer with experience in preventive maintenance, microcontroller systems, and safety compliance..."></textarea>
+            <p class="text-slate-300 mb-4">Are you a recruiter? Paste a job description below, and my AI assistant will generate a custom pitch explaining exactly why my engineering skills make me the perfect fit for your team!</p>
+            <textarea id="jobDescriptionInput" rows="3" class="w-full bg-background/50 border border-slate-700 rounded-lg p-4 text-slate-200 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 mb-4 placeholder-slate-500" placeholder="Paste the job description here..."></textarea>
             <button id="generatePitchBtn" class="bg-accent hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors flex items-center shadow-lg shadow-accent/20">
                 <i class="fas fa-magic mr-2"></i> Generate Pitch
             </button>
@@ -229,7 +229,7 @@
                 <h2 class="text-2xl md:text-3xl font-bold text-white">Work Experience</h2>
             </div>
             
-            <div class="relative pl-8 before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-secondary before:to-transparent">
+            <div class="relative pl-8 before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-accent before:to-transparent">
                 <div class="relative mb-8">
                     <div class="absolute -left-[39px] w-4 h-4 rounded-full bg-accent border-4 border-primary"></div>
                     <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
@@ -390,7 +390,7 @@
             </div>
 
             <div class="p-3 bg-primary border-t border-slate-800 flex items-center gap-2">
-                <input type="text" id="chatInput" class="flex-1 bg-background border border-slate-700 rounded-full px-4 py-2 text-sm text-slate-200 focus:outline-none focus:border-accent shadow-inner" placeholder="Type your question...">
+                <input type="text" id="chatInput" class="flex-1 bg-background border border-slate-700 rounded-full px-4 py-2 text-sm text-slate-200 focus:outline-none focus:border-accent shadow-inner placeholder-slate-500" placeholder="Ask me anything...">
                 <button id="sendChatBtn" class="w-9 h-9 rounded-full bg-accent text-white flex items-center justify-center hover:bg-blue-600 transition-colors shadow-lg shadow-accent/20 flex-shrink-0">
                     <i class="fas fa-paper-plane text-sm -ml-0.5"></i>
                 </button>
@@ -398,7 +398,7 @@
         </div>
 
         <!-- Chat Toggle Button -->
-        <button id="toggleChatBtn" class="w-14 h-14 rounded-full bg-accent text-white shadow-xl shadow-accent/30 flex items-center justify-center hover:scale-110 transition-transform duration-200 border-2 border-blue-400 group">
+        <button id="toggleChatBtn" class="w-14 h-14 rounded-full bg-accent text-white shadow-xl shadow-accent/30 flex items-center justify-center hover:scale-110 transition-transform duration-200 border border-blue-400 group">
             <i class="fas fa-comment-dots text-2xl group-hover:hidden"></i>
             <i class="fas fa-sparkles text-2xl hidden group-hover:block"></i>
         </button>
@@ -406,22 +406,25 @@
 
     <!-- NEW: Application Script with Gemini API Integration -->
     <script>
-        const apiKey = "AIzaSyAMb4ENTT2svISGtCpzIh2olHMQpYtvAcg"; // Execution environment injects the key
+        const apiKey = "AIzaSyBWKg9M5YLhRTP3WryhC7kfTPb2KYMpaxw";
         
         // Royland's full context encoded for the AI's system prompt
         const roylandContext = `
             Name: Royland Castroverde
             Roles: Licensed Electronics Engineer (ECE), Registered Electronics Technician (ECT), Certified Safety Officer 2 (SO2)
-            Summary: Hands-on experience in equipment maintenance, troubleshooting, and system operations. Skilled in preventive maintenance, machine diagnostics, and technical support within safety-critical environments. Capable of supporting production and operational efficiency through strong problem-solving and technical skills.
-            Technical Skills: Equipment Maintenance, Troubleshooting, Electrical & Electronic Systems, Technical Inspection, Arduino / Microcontroller Systems, GPIO Control & Hardware Integration, NFC Technology Implementation, Python, Embedded C++, Database Integration, AutoCAD, Occupational Safety and Health (OSH) Compliance, Hazard Identification & Risk Assessment.
-            Experience: Air Navigation Services - On-the-Job Training at Civil Aviation Authority of the Philippines (CAAP) in San Jose, Pili, Camarines Sur (June 2024). Assisted in maintenance, monitoring, and troubleshooting of electronic and communication equipment used in aviation operations.
-            Projects: Smart NFC-Integrated Automatic Locker System. Designed and developed an automated locker system using NFC technology for secure machine access. Integrated hardware components, locking mechanisms, and software-based authentication systems.
+            Summary: Hands-on experience in equipment maintenance, troubleshooting, and system operations. Skilled in preventive maintenance, machine diagnostics, and technical support within safety-compliant environments. Passionate about emerging technologies including IoT, NFC integration, and automation systems.
+            Technical Skills: Equipment Maintenance, Troubleshooting, Electrical & Electronic Systems, Technical Inspection, Arduino / Microcontroller Systems, GPIO Control & Hardware Integration, NFC Technology, Python, Embedded C++, Database Integration, AutoCAD, Microsoft Office, OSH Compliance, Hazard Identification, Risk Assessment.
+            Experience: Air Navigation Services - On-the-Job Training at Civil Aviation Authority of the Philippines (CAAP) in San Jose, Pili, Camarines Sur (June 2024). Assisted in maintenance, monitoring, and troubleshooting of electronic and communication equipment used in aviation operations. Supported preventive maintenance activities and conducted equipment inspections.
+            Projects: Smart NFC-Integrated Automatic Locker System. Designed and developed an automated locker system using NFC technology for secure machine access. Integrated hardware components, locking mechanisms, and software-based authentication systems. Developed backend database and user interface for operational management.
             Education: Bachelor of Science in Electronics Engineering at Camarines Sur Polytechnic Colleges (August 2022 - July 2025).
             Certifications: Registered Electronics Engineer (ECE) - Board Passer March 2026, Registered Electronics Technician (ECT), Certified Safety Officer 2 (SO2), Mechatronics Service NCII.
             Contact: castroverderoyland9@gmail.com | 09544460250 | Marilao, Bulacan
         `;
 
-        const baseSystemInstruction = `You are a helpful, enthusiastic AI assistant representing Royland Castroverde. Your goal is to strongly advocate for his hiring and answer questions about his professional background using the following information:\n\n${roylandContext}\n\nKeep your answers concise, professional, friendly, and directly related to his qualifications. Address users politely.`;
+        const baseSystemInstruction = `You are a helpful, enthusiastic AI assistant representing Royland Castroverde. Your goal is to strongly advocate for his hiring and answer questions about his professional qualifications. Always highlight his relevant skills and experience to the inquirer. Be confident and positive about his capabilities.
+
+Here is Royland's professional context:
+${roylandContext}`;
 
         // API Fetcher with exponential backoff
         async function fetchGeminiWithRetry(payload, retries = 5) {
@@ -458,7 +461,7 @@
             pitchResult.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
 
             const payload = {
-                contents: [{ parts: [{ text: `Write a concise, compelling cover letter pitch (2 short paragraphs max) explaining why Royland Castroverde is a great fit for the following job description. Map his specific skills to the job requirements. Job Description: ${jobDesc}` }] }],
+                contents: [{ parts: [{ text: `Write a concise, compelling cover letter pitch (2 short paragraphs max) explaining why Royland Castroverde is a great fit for the following job description:\n\n${jobDesc}` }] }],
                 systemInstruction: { parts: [{ text: baseSystemInstruction }] }
             };
 
